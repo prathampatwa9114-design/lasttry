@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Bestie 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #ffd6e0, #e0c3fc);
+  overflow-x: hidden;
+}
+
+/* Title */
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 48px;
+  margin-top: 30px;
+  color: white;
+  animation: fadeIn 2s;
+}
+
+/* Container */
+.container {
+  padding: 20px;
+}
+
+/* Cards */
+.card {
+  background: rgba(255,255,255,0.3);
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 25px;
+  width: 80%;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  animation: fadeIn 2s;
+}
+
+/* Button */
+button {
+  background: #ff8fab;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff4d6d;
+  transform: scale(1.1);
+}
+
+/* Images */
+img {
+  width: 200px;
+  border-radius: 15px;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.heart {
+  position: fixed;
+  color: pink;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  from {transform: translateY(100vh);}
+  to {transform: translateY(-10vh);}
+}
+
+/* Cute footer */
+.footer {
+  color: white;
+  margin-top: 30px;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy Birthday My Bestie 🎂💖</h1>
+
+<div class="container">
+
+  <div class="card">
+    <h2>💌 For You</h2>
+    <p id="typing"></p>
+  </div>
+
+  <div class="card">
+    <h2>📸 Our Memories</h2>
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+  </div>
+
+  <div class="card">
+    <h2>🎁 Surprise</h2>
+    <button onclick="showMessage()">Click Me 💝</button>
+    <p id="msg"></p>
+  </div>
+
+</div>
+
+<div class="footer">
+  Made with 💖 just for you
+</div>
+
+<script>
+// Typing effect
+let text = "You are not just my best friend, you are my whole world 💕 Thank you for always being there for me 🥺✨ I’m so lucky to have you 💖";
+let i = 0;
+
+function typingEffect() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typingEffect, 40);
+  }
+}
+
+typingEffect();
+
+// Surprise message
+function showMessage() {
+  document.getElementById("msg").innerHTML =
+  "I LOVE YOU SO MUCH 💖✨ You are my forever person 😭💕";
+}
+
+// Floating hearts
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 20 + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}, 300);
+</script>
+
+</body>
+</html>
